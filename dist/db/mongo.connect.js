@@ -7,22 +7,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import express from "express";
+import mongoose from "mongoose";
 import "dotenv/config";
-import dbMongo from "./db/mongo.connect.js";
-import { userRouter } from "./routers/router.js";
-let port = process.env.APP_PORT || 7800;
-let host = process.env.APP_HOST || "localhost";
-function startTheServer() {
+let db = process.env.APP_DB;
+function dbMongo() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const app = express();
-            yield dbMongo();
-            app.use(express.json());
-            app.use(userRouter);
-            app.listen(port, () => {
-                console.log(`Server is running http://${host}:${port}`);
-            });
+            yield mongoose.connect(db);
+            console.log("Db ga ulandik");
         }
         catch (error) {
             if (error instanceof Error) {
@@ -31,5 +23,5 @@ function startTheServer() {
         }
     });
 }
-startTheServer();
-//# sourceMappingURL=server.js.map
+export default dbMongo;
+//# sourceMappingURL=mongo.connect.js.map
