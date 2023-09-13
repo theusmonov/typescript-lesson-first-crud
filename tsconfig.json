@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "outDir": "./dist", // TypeScript fayllarini ko'prik faylga ko'chirish uchun
+    "rootDir": "./src", // TypeScript fayllarining joylashgan direktoriya
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true, // Tashqi manbalarni ishlatish uchun
+    "strict": true, // Xatolar va to'g'ri bo'lmagan kod qoidalari
+    "skipLibCheck": true, // @types paketlarini tekshirmaslik
+    "forceConsistentCasingInFileNames": true // Fayllar nomlarini to'g'ri kichik/katta harflar bilan yozish
+  },
+  "include": ["src/**/*.ts"], // TypeScript fayllarini ko'chirish uchun masalalar
+  "exclude": ["node_modules"] // Ko'chirilmaydigan fayllar va direktoriyalar
+}
