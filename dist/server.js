@@ -20,6 +20,10 @@ function startTheServer() {
             yield dbMongo();
             app.use(express.json());
             app.use(userRouter);
+            app.use("/*", (req, res) => {
+                res.status(404).send( req.baseUrl +  " Not Found");
+              });
+              
             app.listen(port, () => {
                 console.log(`Server is running http://${host}:${port}`);
             });
