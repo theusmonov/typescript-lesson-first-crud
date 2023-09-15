@@ -1,17 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ES6",
-    "moduleResolution": "Node",
-    "outDir": "./dist", // TypeScript fayllarini ko'prik faylga ko'chirish uchun
-    "rootDir": "./src", // TypeScript fayllarining joylashgan direktoriya
+    "moduleResolution": "node",
+    "target": "ESNEXT",
+    "module": "commonjs",
     "esModuleInterop": true,
+    "allowJs": true,
+    "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true, // Tashqi manbalarni ishlatish uchun
-    "strict": true, // Xatolar va to'g'ri bo'lmagan kod qoidalari
-    "skipLibCheck": true, // @types paketlarini tekshirmaslik
-    "forceConsistentCasingInFileNames": true // Fayllar nomlarini to'g'ri kichik/katta harflar bilan yozish
-  },
-  "include": ["src/**/*.ts"], // TypeScript fayllarini ko'chirish uchun masalalar
-  "exclude": ["node_modules"] // Ko'chirilmaydigan fayllar va direktoriyalar
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "emitDecoratorMetadata": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true
+  }
 }

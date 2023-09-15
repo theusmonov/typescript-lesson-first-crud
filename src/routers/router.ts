@@ -6,7 +6,7 @@ import userController from "../controllers/user.controller";
 
 
 
-export const userRouter: Router = Router()
+export const userRouter = Router()
 
 userRouter.post("/", userController.addUser)
 userRouter.get("/", userController.getUser)
